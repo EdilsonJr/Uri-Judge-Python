@@ -1,34 +1,20 @@
 n = int(input())
-um = ['o', 'n', 'e']
-dois = ['t', 'w', 'o']
-tres = ['t', 'h', 'r', 'e', 'e']
 
 for i in range(n):
-    x = input()
-    tam = len(x)
-    erros = 0
-    u = 0
-    d = 0
+    entrada = input()
 
-    if tam == 5:
-        for j in range(5):
-            if x[j] != tres[j]:
-                erros += 1
-
-        if erros <= 1:
-            print(3)
+    if len(entrada) > 3:
+        print(3)
     else:
-        for j in range(3):
-            if x[j] != um[j] and x[j] != dois[j]:
-                erros += 1
-            if x[j] == um[j]:
-                u += 1
-            if x[j] == dois[j]:
-                d += 1
+        qtd = 0
+        if entrada[0:1] == 'o':
+            qtd += 1
+        if entrada[1:2] == 'n':
+            qtd += 1
+        if entrada[2:3] == 'e':
+            qtd += 1
 
-        if erros <= 1:
-            if u > d:
-                print(1)
-            else:
-                print(2)
-
+        if qtd >= 2:
+            print(1)
+        else:
+            print(2)
